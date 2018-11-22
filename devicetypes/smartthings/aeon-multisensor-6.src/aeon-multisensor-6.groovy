@@ -485,6 +485,7 @@ private command(physicalgraph.zwave.Command cmd) {
 	}
 }
 
+<<<<<<< HEAD
 private commands(commands, delay = 200) {
 	log.debug "sending commands: ${commands}"
 	delayBetween(commands.collect { command(it) }, delay)
@@ -544,3 +545,9 @@ def getReportTypesFromValue(value) {
 	}
 	reportList
 }
+=======
+private commands(commands, delay=200) {
+	log.info "sending commands: ${commands}"
+	delayBetween(commands.collect{ command(it) }, delay)
+}
+>>>>>>> refs/remotes/origin/master

@@ -181,6 +181,7 @@ def updated() {
 }
 
 def initialize() {
+<<<<<<< HEAD
 	// Device only goes OFFLINE when Hub is off
 	sendEvent(name: "DeviceWatch-Enroll", value: JsonOutput.toJson([protocol: "zwave", scheme:"untracked"]), displayed: false)
 	def zwMap = getZwaveInfo()
@@ -202,3 +203,7 @@ private void createChildDevices() {
 				 isComponent: true, componentName: "button$i", componentLabel: "Button $i"])
 	}
 }
+=======
+	sendEvent(name: "numberOfButtons", value: 4)
+}
+>>>>>>> refs/remotes/origin/master

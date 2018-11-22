@@ -332,6 +332,11 @@ private shouldUseOldBatteryReporting() {
 			(devMajor == targetVersion[0] && devMinor < targetVersion[1]) ||
 			(devMajor == targetVersion[0] && devMinor == targetVersion[1] && devBuild < targetVersion[2]))
 	}
+<<<<<<< HEAD
 
 	return isFwVersionLess // If f/w version is less than 1.15.7 then do NOT smooth battery reports and use the old reporting
 }
+=======
+	return array
+}
+>>>>>>> refs/remotes/origin/master

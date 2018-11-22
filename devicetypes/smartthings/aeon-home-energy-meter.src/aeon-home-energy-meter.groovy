@@ -160,6 +160,7 @@ def reset() {
 }
 
 def configure() {
+<<<<<<< HEAD
 	log.debug "configure()..."
 	if (zwaveInfo.model.equals("005F"))
 		delayBetween([
@@ -198,4 +199,16 @@ private secEncap(physicalgraph.zwave.Command cmd) {
 
 private crcEncap(physicalgraph.zwave.Command cmd) {
 	zwave.crc16EncapV1.crc16Encap().encapsulate(cmd).format()
+=======
+	def cmd = delayBetween([
+		zwave.configurationV1.configurationSet(parameterNumber: 101, size: 4, scaledConfigurationValue: 4).format(),   // combined power in watts
+		zwave.configurationV1.configurationSet(parameterNumber: 111, size: 4, scaledConfigurationValue: 300).format(), // every 5 min
+		zwave.configurationV1.configurationSet(parameterNumber: 102, size: 4, scaledConfigurationValue: 8).format(),   // combined energy in kWh
+		zwave.configurationV1.configurationSet(parameterNumber: 112, size: 4, scaledConfigurationValue: 300).format(), // every 5 min
+		zwave.configurationV1.configurationSet(parameterNumber: 103, size: 4, scaledConfigurationValue: 0).format(),    // no third report
+		zwave.configurationV1.configurationSet(parameterNumber: 113, size: 4, scaledConfigurationValue: 300).format() // every 5 min
+	])
+	log.debug cmd
+	cmd
+>>>>>>> refs/remotes/origin/master
 }
